@@ -697,8 +697,8 @@ const courses = {
     title: 'Basic Computer Course',
     description: 'This extensive introductory computer course at our computer education centre covers key competencies like word processing, spreadsheet management, email usage, internet navigation, and basic troubleshooting. This course is perfect for beginners since it gives them the basic digital literacy they need to undertake daily computer chores with confidence and advance their technology skills.',
     trainer: 'Prakash Kumar',
-    fee: '₹600',
-    duration: '4 Months',
+    fee: '₹600 / Month',
+    duration: '3/6/12 Months',
   },
     popularcourse02: {
     detail : 'Programming, database administration, networking, cybersecurity, and advanced software skills for career advancement are all covered in the advanced computer course.',
@@ -706,7 +706,7 @@ const courses = {
     description: 'Our computer education centre offers an advanced computer course that explores advanced software abilities, database administration, networking, cybersecurity, and programming languages. This course, which is intended for professionals looking to improve their technical expertise, guarantees thorough information and practical experience, preparing students for challenging and high-level IT tasks.',
     trainer: 'Prakash Kumar',
     fee: '₹1000',
-    duration: '4 Months',
+    duration: '3/6/12 Months',
   },
     popularcourse03: {
     detail : 'Web development, UI/UX design, graphic design principles, and advanced design software abilities are all covered in the Web & Graphic Designing course.',
@@ -714,7 +714,7 @@ const courses = {
     description: 'Web programming, UI/UX design, and fundamental graphic design concepts are all covered in our Web & Graphic Designing course, which is intended for budding designers. By mastering industry-standard programmes like Adobe Creative Suite, students will acquire the abilities necessary to produce visually appealing, intuitive websites and captivating digital graphics.',
     trainer: 'Prakash Kumar',
     fee: '₹1000',
-    duration: '4 Months',
+    duration: '6/12 Months',
   },
 };
 
