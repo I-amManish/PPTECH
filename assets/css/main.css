@@ -1240,40 +1240,7 @@ section,
   font-size: 22px;
 }
 
-/* info: scroll more */ 
-.mouse-btn {
-  margin: 10px auto;
-  width: 40px;
-  height: 80px;
-  border: 3px solid rgba(122, 122, 124, 0.918);
-  border-radius: 20px;
-  display: flex;
-}
-
-.mouse-scroll {
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
-  border-radius: 50%;
-  margin: auto;
-  animation: scrolling13 1s linear infinite;
-}
-
-@keyframes scrolling13 {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(20px);
-  }
-}
-
 /*info: Enroll Now button styles */
-
 .button-row {
   display: flex;
   gap: 10px; /* Adjust spacing between buttons as needed */
@@ -1323,62 +1290,6 @@ section,
     opacity: 1;
   }
 }
-
-/* Center the entire container */
-.container_mouse {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-/* Center the text */
-.align-content-center {
-  text-align: center;
-  font-size: 18px; /* Adjust the size */
-  font-weight: bold;
-  color: var(--default-color); /* Text color */
-  margin-top: 10px; /* Add space between text and the button */
-  margin-bottom: 20px; /* Space between text and scroll button */
-}
-
-/* Style for the mouse button container */
-.mouse-btn {
-  margin: 10px auto;
-  width: 40px;
-  height: 80px;
-  border: 3px solid rgba(122, 122, 124, 0.918);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Style for the scroll element inside the button */
-.mouse-scroll {
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
-  border-radius: 50%;
-  margin: auto;
-  animation: scrolling13 1s linear infinite;
-}
-
-/* Animation for scrolling effect */
-@keyframes scrolling13 {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(20px);
-  }
-}
-
 
 /*info: Call button styles */
 .btn-call {
