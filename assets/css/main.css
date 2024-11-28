@@ -1240,56 +1240,94 @@ section,
   font-size: 22px;
 }
 
-/*info: Enroll Now button styles */
-.button-row {
+/* info: scroll more */ 
+.mouse-btn {
+  margin: 10px auto;
+  width: 40px;
+  height: 80px;
+  border: 3px solid rgba(122, 122, 124, 0.918);
+  border-radius: 20px;
   display: flex;
-  gap: 10px; /* Adjust spacing between buttons as needed */
-  align-items: center; /* Vertically aligns buttons */
-}
-.enrollBtn {
-  width: 140px;
-  height: 40px;
-  border-radius: 30px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 20px;
-  gap: 9px;
-  color: #ffffff;
-  background: linear-gradient(to right,rgb(128, 128, 255),rgb(183, 128, 255));
-  position: relative;
-  cursor: pointer;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.212);
 }
 
-.arrow {
-  position: absolute;
-  right: 7.5px;
-  background-color: rgb(255, 255, 255);
-  width: 25px;
-  height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mouse-scroll {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
   border-radius: 50%;
+  margin: auto;
+  animation: scrolling13 1s linear infinite;
 }
 
-.enrollBtn:hover .arrow {
-  animation: slide-in-left 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes slide-in-left {
+@keyframes scrolling13 {
   0% {
-    transform: translateX(-10px);
     opacity: 0;
+    transform: translateY(-20px);
   }
 
   100% {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateY(20px);
   }
 }
+
+/*info: Enroll Now button styles */
+/* Center the entire container */
+.container_mouse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Center the text */
+.align-content-center {
+  text-align: center;
+  font-size: 18px; /* Adjust the size */
+  font-weight: bold;
+  color: var(--default-color); /* Text color */
+  margin-top: 10px; /* Add space between text and the button */
+  margin-bottom: 20px; /* Space between text and scroll button */
+}
+
+/* Style for the mouse button container */
+.mouse-btn {
+  margin: 10px auto;
+  width: 40px;
+  height: 80px;
+  border: 3px solid rgba(122, 122, 124, 0.918);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for the scroll element inside the button */
+.mouse-scroll {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(170deg, rgba(122, 122, 124, 0.918), rgb(123, 124, 124));
+  border-radius: 50%;
+  margin: auto;
+  animation: scrolling13 1s linear infinite;
+}
+
+/* Animation for scrolling effect */
+@keyframes scrolling13 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+}
+
 
 /*info: Call button styles */
 .btn-call {
@@ -2076,3 +2114,20 @@ section,
   }
 }
 /* note: enroll form css end */
+.hm-gradient {
+  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+  color: #2E2E2E;
+}
+.embed-responsive-16by9::before {
+  background-image: url('https://mdbootstrap.com/img/screens/yt/video.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
