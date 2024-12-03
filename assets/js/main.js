@@ -747,14 +747,14 @@ window.onload = loadCourseData;
 
 // note: gallery js
 
-var gallery = document.querySelector('#gallery');
-var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-var resizeAll = function () {
-    var altura = getVal(gallery, 'grid-auto-rows');
-    var gap = getVal(gallery, 'grid-row-gap');
+let gallery = document.querySelector('#gallery');
+let getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
+let getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
+let resizeAll = function () {
+    let altura = getVal(gallery, 'grid-auto-rows');
+    let gap = getVal(gallery, 'grid-row-gap');
     gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-        var el = item;
+        let el = item;
         el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
     });
 };
@@ -765,9 +765,9 @@ gallery.querySelectorAll('img').forEach(function (item) {
     }
     else {
         item.addEventListener('load', function () {
-            var altura = getVal(gallery, 'grid-auto-rows');
-            var gap = getVal(gallery, 'grid-row-gap');
-            var gitem = item.parentElement.parentElement;
+            let altura = getVal(gallery, 'grid-auto-rows');
+            let gap = getVal(gallery, 'grid-row-gap');
+            let gitem = item.parentElement.parentElement;
             gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
             item.classList.remove('byebye');
         });
@@ -785,7 +785,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
 
 ;(function($) {
 
-  var pluginName	= 'vidGallery',
+  let pluginName	= 'vidGallery',
       dataKey 	= 'plugin_' + pluginName,
       defaults	= {
           galleryMainClass:	'gallery-main',
@@ -823,7 +823,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
       },
       _getVideos: function () {
 
-          var self			= this,
+          let self			= this,
               thumbSize 		= self.options.thumbSize;
 
           videoList = [];
@@ -856,7 +856,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
 
           $('.' + self.options.galleryItemClass).each(function (index) {
 
-              var $vidLink = $(this).find('a'),
+              let $vidLink = $(this).find('a'),
                   listItem = [],
                   text = $(this).data('type') === 'youtube' ? 'v=' : 'video/';
 
@@ -866,7 +866,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
                   vidDesc: $vidLink.text(),
                   type: $(this).data('type')
               });
-              var thumbnailUrl = '';
+              let thumbnailUrl = '';
               if (text === 'v=') {
                   thumbnailUrl = 'http://i.ytimg.com/vi/' + videoList[index].videoId + '/' + thumbSize;
               } else {
@@ -894,7 +894,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
       },
       _getMainVid: function () {
 
-          var self 		= this,
+          let self 		= this,
               mainVid		= [],
               url = videoList[0].type === 'youtube'
                   ? 'www.youtube.com/embed/' + videoList[0].videoId + '?rel=0'
@@ -912,13 +912,13 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
       },
       _getEvents: function () {
 
-          var self = this;
+          let self = this;
 
           $('.' + self.options.galleryItemClass).on('click', function (e) {
 
               e.preventDefault();
 
-              var $iframe			= $('.' + self.options.galleryMainClass).find('iframe'),
+              let $iframe			= $('.' + self.options.galleryMainClass).find('iframe'),
                   currentIndex	= $(this).index(),
                   newSrc = videoList[currentIndex].type === 'youtube'
                       ? 'https://www.youtube.com/embed/' + videoList[currentIndex].videoId + '?rel=0'
@@ -940,7 +940,7 @@ gallery.querySelectorAll('.gallery-item').forEach(function (item) {
 
   $.fn[pluginName] = function (options) {
 
-      var plugin = this.data(dataKey);
+      let plugin = this.data(dataKey);
 
       if ( plugin instanceof Plugin ) {
           if (typeof options !== 'undefined') {
