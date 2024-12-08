@@ -911,118 +911,210 @@ section,
 }
 
 /* note: hero section */
-
-#carouselExampleAutoplaying {
-  position: relative;
-  height: 90vh; /* Use full viewport height */
+.section-hero {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 77px;
   overflow: hidden;
 }
 
-.carousel-item img {
+.hero {
   width: 100%;
-  height: 100%; /* Ensures consistent height for all images */
-  object-fit: cover; /* Ensures images cover the container without distortion */
-}
-
-
-/* Overlay container for text */
-.carousel-caption {
-  position: absolute;
-  top: 55%;
-  left: 10%;
-  transform: translateY(-50%);
-  color: white;
-  text-align: left;
-  max-width: 600px;
-  z-index: 10;
-}
-.carousel-inner {
-  height: 100%; /* Make all slides the same height */
-}
-.carousel-item {
-  height: 100%; /* Ensure each item matches the parent's height */
-}
-.hero.section, .carousel-inner, .carousel-item {
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(0deg, var(--background-color) 0%, color-mix(in srgb, var(--background-color) 90%, white 10%) 100%);
   padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
 }
 
-/* Styling for the main text */
-.carousel-caption h2 {
-  font-size: 2.5rem;
+.hero .carousel-item {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center center; /* Ensures the image is centered */
+  position: relative;
+}
+
+/* Slide 1 */
+.hero .carousel-item:nth-child(1) {
+  background-image: url('../img/heroimg1.jpg') !important;
+  background-color: #f0f0f0; /* Fallback color */
+}
+
+/* Slide 2 */
+.hero .carousel-item:nth-child(2) {
+  background-image: url('../img/heroimg2.jpg'); /* Use relative path */
+  background-color: #f0f0f0; /* Fallback color */
+}
+
+/* Slide 3 */
+.hero .carousel-item:nth-child(3) {
+  background-image: url('../img/heroimg3.jpg'); /* Use relative path */
+  background-color: #f0f0f0; /* Fallback color */
+}
+
+/* Optional: Dark overlay to improve text visibility */
+.hero .carousel-item::before { 
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay  */
+  z-index: 0;
+}
+
+/* Styling for the carousel text and container */
+.hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left;
+  position: relative;
+  min-height: 75vh;
+  padding-top: 200px;
+  z-index: 1;
+  margin-left: 100px;
+}
+
+.hero h2 {
+  margin-bottom: 30px;
+  font-size: 48px;
   font-weight: 700;
-  line-height: 1.2;
 }
 
-/* Styling for the subtext */
-.carousel-caption p {
-  font-size: 1.2rem;
+.hero h2 span {
+  text-decoration: underline;
+}
+
+.hero p {
+  max-width: 80%;
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  margin-left: 0;
+  font-size: 19.2px;
   font-weight: 400;
-  margin-top: 10px;
-  margin-bottom: 20px;
 }
 
-/* Button styling */
-.carousel-caption .btn-get-started {
-  font-size: 1rem;
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
+  width: 10%;
+}
+
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 48px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+.hero .btn-get-started {
   font-weight: 500;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-  padding: 10px 20px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 25px;
   border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  animation-delay: 0.8s;
+  color: var(orange);
+  border: 2px solid var(--accent-color);
 }
 
-.carousel-caption .btn-get-started:hover {
+.hero .btn-get-started:hover {
   background: var(--accent-color);
   color: white;
+  text-decoration: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) { /* Tablets */
-  .carousel-caption h2 {
-    font-size: 2rem;
+/* Media Queries */
+@media (min-width: 1024px) {
+  .hero p {
+    max-width: 60%;
   }
-  .carousel-caption p {
-    font-size: 1rem;
-  }
-  .carousel-caption .btn-get-started {
-    padding: 8px 18px;
-  }
-}
 
-@media (max-width: 768px) { /* Landscape phones */
-  .carousel-caption {
-    left: 5%;
-    max-width: 80%;
-  }
-  .carousel-caption h2 {
-    font-size: 1.8rem;
-  }
-  .carousel-caption p {
-    font-size: 0.9rem;
+  .hero .carousel-control-prev,
+  .hero .carousel-control-next {
+    width: 5%;
   }
 }
 
-@media (max-width: 576px) { /* Portrait phones */
-  #carouselExampleAutoplaying {
-    height: 100vh; /* Adjust carousel height */
+@media (max-width: 768px) {
+  .hero .carousel-container {
+    min-height: 90vh;
   }
-  .carousel-caption {
-    left: 5%;
-    top: 60%; /* Adjusted position */
-    max-width: 90%;
+
+  .hero h2 {
+    font-size: 28px;
   }
-  .carousel-caption h2 {
-    font-size: 1.2rem;
+}
+
+/* Hero waves animation */
+.hero .hero-waves {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: relative;
+}
+
+.hero .wave1 use {
+  animation: move-forever1 10s linear infinite;
+  animation-delay: -2s;
+  fill: #092327;
+  opacity: 0.6;
+}
+
+.hero .wave2 use {
+  animation: move-forever2 8s linear infinite;
+  animation-delay: -2s;
+  fill: #0b5351;
+  opacity: 0.4;
+}
+
+.hero .wave3 use {
+  animation: move-forever3 6s linear infinite;
+  animation-delay: -2s;
+  fill: #00a9a5;
+}
+
+@keyframes move-forever1 {
+  0% {
+    transform: translate(85px, 0%);
   }
-  .carousel-caption p {
-    font-size: 0.6rem;
+
+  100% {
+    transform: translate(-90px, 0%);
   }
-  .carousel-caption .btn-get-started {
-    padding: 6px 16px;
-    font-size: 0.9rem;
+}
+
+@keyframes move-forever2 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever3 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
   }
 }
 
