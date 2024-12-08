@@ -942,19 +942,19 @@ section,
 
 /* Slide 1 */
 .hero .carousel-item:nth-child(1) {
-  background-image: url('../img/heroimg1.jpg') !important;
+  background-image: url('../img/pptech-computer (1).jpg') !important;
   background-color: #f0f0f0; /* Fallback color */
 }
 
 /* Slide 2 */
 .hero .carousel-item:nth-child(2) {
-  background-image: url('../img/heroimg2.jpg'); /* Use relative path */
+  background-image: url('../img/pptech-computer (2).jpg'); /* Use relative path */
   background-color: #f0f0f0; /* Fallback color */
 }
 
 /* Slide 3 */
 .hero .carousel-item:nth-child(3) {
-  background-image: url('../img/heroimg3.jpg'); /* Use relative path */
+  background-image: url('../img/pptech-computer (3).jpg'); /* Use relative path */
   background-color: #f0f0f0; /* Fallback color */
 }
 
